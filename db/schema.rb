@@ -23,12 +23,4 @@ ActiveRecord::Schema.define(version: 2022_02_03_004231) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "ranges", force: :cascade do |t|
-    t.string "name"
-    t.integer "peak_count"
-    t.boolean "northern_hemisphere"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
 end
