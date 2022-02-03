@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   get '/', to: 'welcome#index'
 
   get '/planets', to: 'planets#index'
+  get '/planets/:id', to: 'planets#show'
 
 end
