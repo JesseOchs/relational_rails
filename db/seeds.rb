@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+rockies = MountainRange.create!(name:"Rocky Mountains", peak_count: 77, northern_hemisphere: true)
+himalayas = MountainRange.create!(name: "Himalayas", peak_count: 110, northern_hemisphere: true)
+andes = MountainRange.create!(name: "Andes", peak_count: 100, northern_hemisphere: false)

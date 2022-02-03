@@ -1,3 +1,3 @@
-class MountainRange < ApplicationRecord 
-    
+class MountainRange < ApplicationRecord
+    has_many :mountains
 end
