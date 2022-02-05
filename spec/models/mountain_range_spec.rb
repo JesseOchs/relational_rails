@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe MountainRange, type: :model do
-    # describe 'relationship' do 
-    #     it { should have_many(:mountains) }
-    # end
+    describe 'relationship' do 
+        it { should have_many(:mountains) }
+    end
 
     # describe 'validations' do 
     #     it {  should validate_presence_of(:name) }

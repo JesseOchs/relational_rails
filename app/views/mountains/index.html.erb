@@ -1,10 +1,10 @@
-<h1>Mountain</h1>
-
+<h1>Mountains</h1>
+ 
 <% @mountains.each do |mountain| %>
-    <p>
-    <%= mountain.mountain_range.name %>
-    <a href="/mountains/<%= mountain.id %>"><%= mountain.name %></a>
-    <%= mountain.height %>
-    <%= mountain.fourteener %></p>
-    
+<p><a href ="/mountains/<%= mountain.id %>"><%= mountain.name %></a></p>
+         <ul>
+         <li><p>ID: <%= mountain.id %></p>      
+         <li><p>Height: <%= mountain.height %></p>      
+         <li><p>Fourteener? <%= mountain.fourteener %></p>
+         </ul>      
 <% end %>

@@ -1,0 +1,3 @@
+class MountainRangeMountain < ApplicationRecord
+
+end

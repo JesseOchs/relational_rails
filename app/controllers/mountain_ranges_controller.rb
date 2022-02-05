@@ -8,4 +8,8 @@ class MountainRangesController < ApplicationController
         @range = MountainRange.find(params[:id])
     end
 
+    def create
+        @mountain_range = MountainRange.create
+    end
+
 end
