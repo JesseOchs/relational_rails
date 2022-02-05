@@ -9,18 +9,21 @@ RSpec.describe 'mountain range show' do
     end
 
     scenario 'visitor sees mountain range attributes on show page' do 
+        visit "/mountainranges/#{@rockies.id}"
         expect(page).to have_content(@rockies.name)
         expect(page).to have_content(@rockies.peak_count)
         expect(page).to have_content(@rockies.northern_hemisphere)
     end
 
-    scenario 'visitor sees mountain range attributes on show page' do 
+    scenario 'visitor sees mountain range attributes on show page' do
+        visit "/mountainranges/#{@himalayas.id}" 
         expect(page).to have_content(@himalayas.name)
         expect(page).to have_content(@himalayas.peak_count)
         expect(page).to have_content(@himalayas.northern_hemisphere)
     end
 
-    scenario 'visitor sees mountain range attributes on show page' do 
+    scenario 'visitor sees mountain range attributes on show page' do
+        visit "/mountainranges/#{@andes.id}" 
         expect(page).to have_content(@andes.name)
         expect(page).to have_content(@andes.peak_count)
         expect(page).to have_content(@andes.northern_hemisphere)

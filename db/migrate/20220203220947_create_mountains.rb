@@ -5,7 +5,12 @@ class CreateMountains < ActiveRecord::Migration[5.2]
       t.integer :height
       t.boolean :fourteener
 
+
       t.timestamps
     end
+
+    add_reference :mountains, :mountain_range, foreign_key: true
+
   end
+
 end

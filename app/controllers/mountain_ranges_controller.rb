@@ -4,4 +4,8 @@ class MountainRangesController < ApplicationController
        @mountain_range = MountainRange.all
     end 
 
+    def show
+        @range = MountainRange.find(params[:id])
+    end
+
 end
