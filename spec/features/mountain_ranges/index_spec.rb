@@ -14,4 +14,22 @@ RSpec.describe 'mountain ranges index' do
         expect(page).to have_content(@himalayas.name)
         expect(page).to have_content(@andes.name)
     end
+
+    scenario 'visitor sees ranges in order with created at info' do 
+        visit '/mountainranges/'
+
+        within("#mountainranges-#{@rockies.id}") do 
+            expect(page).to have_content(@rockies.name)
+            expect(page).to have_content(@rockies.created_at)
+        end
+
+        within("#mountainranges-#{@himalayas.id}") do 
+            expect(page).to have_content(@himalayas.name)
+            expect(page).to have_content(@himalayas.created_at)
+        end
+        within("#mountainranges-#{@andes.id}") do 
+            expect(page).to have_content(@andes.name)
+            expect(page).to have_content(@andes.created_at)
+        end
+    end
 end
