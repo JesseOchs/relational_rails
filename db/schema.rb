@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_03_220947) do
+ActiveRecord::Schema.define(version: 2022_02_06_184959) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(version: 2022_02_03_220947) do
     t.string "name"
     t.integer "height"
     t.boolean "fourteener"
+    t.bigint "mountain_range_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "mountain_range_id"
     t.index ["mountain_range_id"], name: "index_mountains_on_mountain_range_id"
   end
 
