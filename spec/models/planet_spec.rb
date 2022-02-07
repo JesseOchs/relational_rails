@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Planet do
 
   describe 'relationships' do
-    #it {should have_many :satellites}
+    it {should have_many :satellites}
   end
 
   describe 'validations' do
