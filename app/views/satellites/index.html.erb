@@ -1,6 +1,8 @@
 <% @satellites.each do |satellite| %>
 
-  <h1><%= satellite.name %></h1>
+
+
+  <h1><%= link_to "#{satellite.name}", "/satellites/#{satellite.id}" %></h1>
   <p>Host Planet: <%= satellite.planet_id %></p>
   <p>Discovery Year: <%= satellite.discovery_year %></p>
   <p>Artificial? <%= satellite.artificial %></p>
