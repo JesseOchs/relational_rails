@@ -1,0 +1,11 @@
+<% @satellites.each do |satellite| %>
+
+  <h1><%= satellite.name %></h1>
+  <p>Host Planet: <%= satellite.planet_id %></p>
+  <p>Discovery Year: <%= satellite.discovery_year %></p>
+  <p>Artificial? <%= satellite.artificial %></p>
+  <p>Created At - <%= satellite.created_at %></p>
+  <p>Updated At - <%= satellite.updated_at %></p>
+
+
+<% end %>
