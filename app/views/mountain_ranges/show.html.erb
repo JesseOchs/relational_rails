@@ -1,0 +1,11 @@
+<ul>
+  <li><a href="/mountains">All Mountains</a></li>
+  <li><a href="/mountainranges">All Mountain Ranges</a></li>
+  <li><a href="/mountainranges/<%= @range.id %>/mountains">Mountains in Range</a></li>
+</ul>
+
+<h1><%= @range.name %></h1>
+<p>Peak Count:<%= @range.peak_count %></p>
+<p>Is it in the northern hemisphere? <%= @range.northern_hemisphere %></p>
+<p>Mountains count: <%= @range.count_mountains %></p>
+

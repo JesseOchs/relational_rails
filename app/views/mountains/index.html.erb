@@ -1,0 +1,14 @@
+<ul>
+  <li><a href="/mountainranges">All Mountain Ranges</a></li>
+</ul>
+
+<h1>Mountains</h1>
+ 
+<% @mountains.each do |mountain| %>
+<p><a href ="/mountains/<%= mountain.id %>"><%= mountain.name %></a></p>
+         <ul>
+         <li><p>ID: <%= mountain.id %></p>      
+         <li><p>Height: <%= mountain.height %></p>      
+         <li><p>Fourteener? <%= mountain.fourteener %></p>
+         </ul>      
+<% end %>

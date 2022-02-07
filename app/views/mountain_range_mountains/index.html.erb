@@ -1,0 +1,7 @@
+<% @mountains.each do |mountain|%>
+    <div id="mountain-<%= mountain.id %>"> 
+    <p>Name: <%= mountain.name%></p>
+    <p>Height: <%= mountain.height%></p>
+    <p>Fourteener? <%= mountain.fourteener%></p>
+    </div>
+<%end%>

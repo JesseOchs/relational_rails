@@ -1,0 +1,23 @@
+<ul>
+  <li><a href="/mountains">All Mountains</a></li>
+</ul>
+
+<h1>Mountain Ranges</h1>
+
+<% @mountain_range.each do |range| %>
+    <div id="mountainranges-<%= range.id %>"> 
+    <h2><a href="/mountainranges/<%= range.id %>"><%= range.name %></a></h2>
+    <h3>Mountain Range ID: <%= range.id%></h3>
+    <h3>Total number of peaks: <%= range.peak_count%></h3>
+    <h3>Is it in the Northern Hemisphere? <%= range.northern_hemisphere%></h3>
+    <h3>Created at: <%= range.created_at%></h3>
+    </div>
+<% end %>
+
+
+
+
+
+
+
+
