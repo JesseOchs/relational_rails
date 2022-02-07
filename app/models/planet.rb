@@ -8,4 +8,8 @@ class Planet < ApplicationRecord
   def self.desc_order
     order(created_at: :desc)
   end
+
+  def child_count
+    Satellite.where(planet_id: self.id).count
+  end
 end

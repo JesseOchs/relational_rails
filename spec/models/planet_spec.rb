@@ -19,5 +19,12 @@ RSpec.describe Planet do
 
       expect(Planet.desc_order).to eq([@planet_two, @planet])
     end
+
+    it '#child_count' do
+      @planet = Planet.create!(name: "Earth", relative_position: 3, dwarf: false)
+      @satellite = @planet.satellites.create!(name: "Moon", discovery_year: 0, artificial: false)
+
+      expect(@planet.child_count).to eq(1)
+    end
   end
 end
