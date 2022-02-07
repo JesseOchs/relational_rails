@@ -38,6 +38,13 @@ RSpec.describe 'mountain range show' do
     scenario 'visitor sees count of mountains associated with the range' do
         visit "/mountainranges/#{@rockies.id}" 
         expect(page).to have_content("Mountains count: 3")
-  
-    end
+      end
+
+      scenario "visitor can click link and go to mountain index" do
+        visit "/mountainranges"
+    
+        click_link('All Mountains')
+        expect(page).to have_current_path('/mountains')
+      end
+
 end

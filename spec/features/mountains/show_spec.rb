@@ -31,4 +31,37 @@ RSpec.describe 'mountains' do
         expect(page).to have_content(@ypsilon.height)
         expect(page).to have_content(@ypsilon.fourteener)
     end
+
+    scenario 'visitor can click links to move around site' do 
+
+        visit "#mountains/#{@rockies.id}" do
+
+            click_link('All Mountains')
+            expect(page).to have_current_path('/mountains')
+            
+            click_link('All Mountain Ranges')
+            expect(page).to have_current_path('/mountainranges')
+           
+        end
+        
+        visit "#mountains/#{@andes.id}" do
+
+            click_link('All Mountains')
+            expect(page).to have_current_path('/mountains')
+            
+            click_link('All Mountain Ranges')
+            expect(page).to have_current_path('/mountainranges')
+           
+        end
+
+        visit "#mountains/#{@himalayas.id}" do
+
+            click_link('All Mountains')
+            expect(page).to have_current_path('/mountains')
+            
+            click_link('All Mountain Ranges')
+            expect(page).to have_current_path('/mountainranges')
+           
+        end
+    end
 end

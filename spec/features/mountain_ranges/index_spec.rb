@@ -32,4 +32,47 @@ RSpec.describe 'mountain ranges index' do
             expect(page).to have_content(@andes.created_at)
         end
     end
+
+    scenario "visitor can click links to move around site" do
+
+        visit "#mountainranges/#{@rockies.id}" do
+
+            click_link('All Mountains')
+            expect(page).to have_current_path('/mountains')
+            
+            click_link('All Mountain Ranges')
+            expect(page).to have_current_path('/mountainranges')
+
+            click_link('Mountains in Range')
+            expect(page).to have_current_path("/mountainranges/#{@rockies.id}/mountains")
+           
+        end
+
+        visit "#mountainranges/#{@andes.id}" do
+
+            click_link('All Mountains')
+            expect(page).to have_current_path('/mountains')
+            
+            click_link('All Mountain Ranges')
+            expect(page).to have_current_path('/mountainranges')
+
+            click_link('Mountains in Range')
+            expect(page).to have_current_path("/mountainranges/#{@andes.id}/mountains")
+           
+        end
+
+        visit "#mountainranges/#{@himalayas.id}" do
+
+            click_link('All Mountains')
+            expect(page).to have_current_path('/mountains')
+            
+            click_link('All Mountain Ranges')
+            expect(page).to have_current_path('/mountainranges')
+
+            click_link('Mountains in Range')
+            expect(page).to have_current_path("/mountainranges/#{@himalayas.id}/mountains")
+           
+        end
+    end
+
 end

@@ -13,4 +13,15 @@ RSpec.describe 'mountains index' do
         expect(page).to have_content(mount_evans.height)
         expect(page).to have_content(mount_evans.fourteener)
     end
+
+
+    scenario "visitor can click links to move around site" do
+
+        visit "#mountains/" do
+            
+            click_link('All Mountain Ranges')
+            expect(page).to have_current_path('/mountainranges')
+           
+        end
+    end
 end
