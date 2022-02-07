@@ -1,6 +1,9 @@
 class SatellitesController < ApplicationController
   def index
-    #binding.pry
     @satellites = Satellite.all
+  end
+
+  def show
+    @satellite = Satellite.find(params[:id])
   end
 end

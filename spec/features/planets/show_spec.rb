@@ -9,15 +9,7 @@ RSpec.describe 'Planets#show' do
     visit "/planets"
   end
 
-  it 'lists all planets & link accordingly' do
-    expect(page).to have_content(@planet.name)
-    expect(page).to have_content(@planet_two.name)
-
-    expect(page).to have_link("#{@planet.name}", :href => "/planets/#{@planet.id}")
-    expect(page).to have_link("#{@planet_two.name}", :href => "/planets/#{@planet_two.id}")
-  end
-
-  it 'contains links to appropriate planets' do
+  it 'contains respective planet info' do
     click_link(@planet.name)
 
     expect(current_path).to eq("/planets/#{@planet.id}")

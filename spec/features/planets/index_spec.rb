@@ -14,4 +14,13 @@ RSpec.describe 'Planets' do
     expect(page).to have_content(@planet_two.name)
   end
 
+
+  it 'lists all planets & link accordingly' do
+    expect(page).to have_content(@planet.name)
+    expect(page).to have_content(@planet_two.name)
+
+    expect(page).to have_link("#{@planet.name}", :href => "/planets/#{@planet.id}")
+    expect(page).to have_link("#{@planet_two.name}", :href => "/planets/#{@planet_two.id}")
+  end
+
 end

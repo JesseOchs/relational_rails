@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get '/planets/:id', to: 'planets#show'
 
   get '/satellites', to: 'satellites#index'
+  get '/satellites/:id', to: 'satellites#show'
 
 end
