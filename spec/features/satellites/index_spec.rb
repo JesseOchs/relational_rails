@@ -9,7 +9,6 @@ RSpec.describe 'Satellites' do
     @satellite = @planet.satellites.create(name: "2V", discovery_year: 2000, artificial: true)
     @satellite_two = @planet_two.satellites.create(name: "3L", discovery_year: 1998, artificial: false)
 
-
     visit "/satellites"
   end
 

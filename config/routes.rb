@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get '/satellites', to: 'satellites#index'
   get '/satellites/:id', to: 'satellites#show'
 
+  get '/planets/:id/satellites', to: 'planet_satellites#index'
 end
