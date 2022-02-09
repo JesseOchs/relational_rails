@@ -40,6 +40,14 @@ class PlanetSatellitesController < ApplicationController
     redirect_to "/planets/#{current_planet.id}/satellites"
   end
 
+  def destroy
+    current_planet = Planet.find(params[:id])
+    satellite = Satellite.find(params[:satellite_id])
+    satellite.destroy
+
+    redirect_to "/planets/#{current_planet.id}/satellites"
+  end
+
   private
   def satellite_params
     params.permit(:name, :discovery_year, :artificial)

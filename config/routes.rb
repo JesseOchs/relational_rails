@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   patch '/satellites/:id', to: 'satellites#update'
 
-  delete '/satellites/:id', to: 'satellites#destroys'
+  delete '/satellites/:id', to: 'satellites#destroy'
 
   # Nested Children
   get '/planets/:id/satellites', to: 'planet_satellites#index'
