@@ -32,6 +32,13 @@ class PlanetsController < ApplicationController
     redirect_to "/planets/#{current_planet.id}"
   end
 
+  def destroy
+    planet = Planet.find(params[:id])
+    planet.destroy
+
+    redirect_to "/planets"
+  end
+
   private
   def planet_params
     params.permit(:name, :relative_position, :dwarf)
