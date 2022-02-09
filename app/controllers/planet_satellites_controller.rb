@@ -1,7 +1,13 @@
 class PlanetSatellitesController < ApplicationController
   def index
     @planet = Planet.find(params[:id])
-    @satellites = @planet.satellites.all
+
+    if params["order"] == "name"
+      @satellites = @planet.satellites.all.order(name: :asc)
+    else
+      @satellites = @planet.satellites.all
+    end
+
   end
 
   def show
