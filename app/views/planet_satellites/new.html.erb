@@ -1,0 +1,12 @@
+<%= form_with url: "/planets/#{@current_planet.id}/satellites", method: 'POST', local: true do |form| %>
+  <%= form.label :name %> <br>
+  <%= form.text_field :name %><br><br>
+
+  <%= form.label :discovery_year %> <br>
+  <%= form.text_field :discovery_year %><br><br>
+
+  <%= form.label :artificial %><br>
+  <%= form.select :artificial, options_for_select([true,false]) %><br><br>
+
+  <%= form.submit "Create Satellite"%>
+<% end %>

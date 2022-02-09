@@ -1,3 +1,15 @@
+<h4>
+  <a href="/planets/<%= @planet.id %>">
+    Return to Planet
+  </a>
+</h4>
+
+<h4>
+  <%= button_to "Create Satellite", "/planets/#{@planet.id}/satellites/new", method: :get %>
+</h4>
+
+<%= link_to "Order by Name", "?order=name" %>
+
 <% @satellites.each do |satellite| %>
 
 
