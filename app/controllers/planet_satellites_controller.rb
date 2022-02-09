@@ -5,6 +5,8 @@ class PlanetSatellitesController < ApplicationController
   end
 
   def show
+    @current_planet = Planet.find(params[:id])
+    @satellite = Satellite.find(params[:satellite_id])
   end
 
   def new
@@ -18,7 +20,11 @@ class PlanetSatellitesController < ApplicationController
   end
 
   def update
+    current_planet = Planet.find(params[:id])
+    current_satellite = Satellite.find(params[:satellite_id])
+    current_satellite.update(satellite_params)
 
+    redirect_to "/planets/#{current_planet.id}/satellites/#{current_satellite.id}"
   end
 
   def create
