@@ -8,4 +8,8 @@ class Satellite < ApplicationRecord
   def self.artificial
     where("artificial = true")
   end
+
+  def self.discovered(year)
+    where("discovery_year >= #{year}")
+  end
 end

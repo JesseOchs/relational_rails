@@ -10,6 +10,13 @@
 
 <%= link_to "Order by Name", "?order=name" %>
 
+<%= form_with url: "?order=discovered", method: 'GET', local: true do |form| %>
+  <%= form.label :discovered %> <br>
+  <%= form.text_field :discovered %><br><br>
+
+  <%= form.submit "Return satellites found after this year"%>
+<% end %>
+
 <% @satellites.each do |satellite| %>
 
 

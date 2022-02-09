@@ -8,6 +8,9 @@ class PlanetSatellitesController < ApplicationController
       @satellites = @planet.satellites.all
     end
 
+    if params[:discovered].to_i > 0
+      @satellites = @planet.satellites.all.discovered(params[:discovered].to_i)
+    end
   end
 
   def show
