@@ -1,12 +1,12 @@
 <%= form_with url: "/planets", method: 'POST', local: true do |form| %>
-  <%= form.label :planet_name %> <br>
-  <%= form.text_field :planet_name %><br><br>
+  <%= form.label :name %> <br>
+  <%= form.text_field :name %><br><br>
 
   <%= form.label :relative_position %> <br>
   <%= form.text_field :relative_position %><br><br>
 
-  <%= form.label :is_dwarf? %><br>
-  <%= form.select :is_dwarf, options_for_select([true,false]) %><br><br>
+  <%= form.label :dwarf %><br>
+  <%= form.select :dwarf, options_for_select([true,false]) %><br><br>
 
   <%= form.submit "Create Planet"%>
 <% end %>

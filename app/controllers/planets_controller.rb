@@ -13,11 +13,10 @@ class PlanetsController < ApplicationController
 
   def create
 
-    binding.pry
     planet = Planet.create({
-      name: params[:planet_name],
+      name: params[:name],
       relative_position: params[:relative_position],
-      dwarf: params[:is_dwarf]
+      dwarf: params[:dwarf]
     })
 
     redirect_to '/planets'
@@ -30,7 +29,11 @@ class PlanetsController < ApplicationController
   def update
     current_planet = Planet.find(params[:id])
     current_planet.update(planet_params)
+    redirect_to "/planets/#{current_planet.id}"
+  end
 
-    redirect_to "/planets/#{planet.id}"
+  private
+  def planet_params
+    params.permit(:name, :relative_position, :dwarf)
   end
 end

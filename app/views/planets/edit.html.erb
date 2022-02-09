@@ -1,12 +1,12 @@
 <%= form_with url: "/planets/#{@current_planet.id}", method: :patch, local: true do |form| %>
   <%= form.label :planet_name %> <br>
-  <%= form.text_field :planet_name %><br><br>
+  <%= form.text_field :name, :value => params[:name] %><br><br>
 
   <%= form.label :relative_position %> <br>
-  <%= form.text_field :relative_position %><br><br>
+  <%= form.text_field :relative_position, :value => params[:relative_position] %><br><br>
 
-  <%= form.label :is_dwarf? %><br>
-  <%= form.select :is_dwarf, options_for_select([true,false]) %><br><br>
+  <%= form.label :dwarf %><br>
+  <%= form.select :dwarf, options_for_select([true,false]) %><br><br>
 
   <%= form.submit 'Update Planet' %>
 <% end %>
