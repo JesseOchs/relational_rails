@@ -1,7 +1,17 @@
+<h4>
+  <%= link_to "All Satellites", "/satellites" %>
+</h4>
+
+<h4>
+  <%= link_to "Create Planet", "/planets/new" %>
+</h4>
+
 <% @planets.each do |planet| %>
  <h3>
 
    <%= link_to "#{planet.name}", "/planets/#{planet.id}" %> - Creation Date: <%= planet.created_at %>
+   <%= button_to "Edit #{planet.name}", "/planets/#{planet.id}/edit", method: :get %>
+   <%= button_to "Delete #{planet.name}", "/planets/#{planet.id}", method: :delete %>
 
  </h3>
 <% end %>

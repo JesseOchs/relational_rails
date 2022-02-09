@@ -1,5 +1,24 @@
+<h4>
+  <%= link_to "Planets Index", "/planets" %>
+</h4>
 
 <h1><%= @planet.name %></h1>
 
 <h3>Relative Position: <%= @planet.relative_position %></h3>
 <h3>Is Dwarf: <%= @planet.dwarf %></h3>
+<h3> Total Satellite Count: <%= @planet.child_count %></h3>
+
+<h3>
+  <%= link_to "All Planet Satellites", "/planets/#{@planet.id}/satellites" %>
+</h3>
+
+<% @satellites.each do |satellite| %>
+
+  <h4>
+    <%= link_to "#{satellite.name}", "/planets/#{@planet.id}/satellites/#{satellite.id}" %>
+    <%= button_to "Edit #{satellite.name}", "/planets/#{@planet.id}/satellites/#{satellite.id}/edit", method: :get %>
+    <%= button_to "Delete #{satellite.name}", "/planets/#{@planet.id}/satellites/#{satellite.id}", method: :delete %>
+
+  </h4>
+
+<% end %>
