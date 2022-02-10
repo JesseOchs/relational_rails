@@ -1,0 +1,16 @@
+
+
+<h4>
+  <%= link_to "Return to #{@current_planet.name} Satellites", "/planets/#{@current_planet.id}/satellites" %>
+</h4>
+
+<h4>
+  <%= button_to "Delete #{@satellite.name}", "/planets/#{@current_planet.id}/satellites/#{@satellite.id}", method: :delete %>
+</h4>
+
+<h1><%= link_to "#{@satellite.name}", "/planets/#{@current_planet.id}/satellites/#{@satellite.id}" %></h1>
+<p>Host Planet: <%= @satellite.planet_id %></p>
+<p>Discovery Year: <%= @satellite.discovery_year %></p>
+<p>Artificial? <%= @satellite.artificial %></p>
+<p>Created At - <%= @satellite.created_at %></p>
+<p>Updated At - <%= @satellite.updated_at %></p>

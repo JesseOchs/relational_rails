@@ -1,0 +1,36 @@
+<h4>
+  <a href="/planets/<%= @planet.id %>">
+    Return to Planet
+  </a>
+</h4>
+
+<h4>
+  <%= button_to "Create Satellite", "/planets/#{@planet.id}/satellites/new", method: :get %>
+</h4>
+
+<%= link_to "Order by Name", "?order=name" %>
+
+<%= form_with url: "?order=discovered", method: 'GET', local: true do |form| %>
+  <%= form.label :discovered %> <br>
+  <%= form.text_field :discovered %><br><br>
+
+  <%= form.submit "Return satellites found after this year"%>
+<% end %>
+
+<% @satellites.each do |satellite| %>
+
+
+
+  <h1><%= link_to "#{satellite.name}", "/planets/#{@planet.id}/satellites/#{satellite.id}" %></h1>
+  <p>Host Planet: <%= satellite.planet_id %></p>
+  <p>Discovery Year: <%= satellite.discovery_year %></p>
+  <p>Artificial? <%= satellite.artificial %></p>
+  <p>Created At - <%= satellite.created_at %></p>
+  <p>Updated At - <%= satellite.updated_at %></p>
+
+  <%= button_to "Edit #{satellite.name}", "/planets/#{@planet.id}/satellites/#{satellite.id}/edit", method: :get %>
+  <%= button_to "Delete #{satellite.name}", "/planets/#{@planet.id}/satellites/#{satellite.id}", method: :delete %>
+
+
+
+<% end %>
